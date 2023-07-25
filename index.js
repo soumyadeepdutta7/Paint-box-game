@@ -7,7 +7,7 @@ const btnRGB = document.createElement("button");
 const btnSize = document.createElement("button");
 const btnReset = document.createElement("button");
 
-window.onload = () => { 
+window.onload = () => { //this function auto selects black on window load
     const boxes = document.querySelectorAll(".box");
     boxes.forEach(box => box.addEventListener("mouseover", () => {
         box.style.backgroundColor = "black";
@@ -26,11 +26,11 @@ function createDivs(cols, rows) {
 }
 createDivs(16, 16);
 
-function reset() { 
+function reset() { //when grid-size changes, previous items need to be removed
     const boxes = container.querySelectorAll(".box");
     boxes.forEach(box => box.remove());
 }
-function resize() { 
+function resize() { //when grid-size is changed every item needs to be called again
     btnSize.textContent = "Grid Size";
     btnSize.addEventListener("click", () => {
         let user = prompt("Enter grids between 16 and 100");
